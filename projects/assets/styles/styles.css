@@ -1,0 +1,244 @@
+@import url("//hello.myfonts.net/count/40989a");
+
+@font-face {
+    font-family: "SignyardBulbShadow";
+    src:  url('/assets/fonts/SignyardBulbShadow/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardBulbShadow/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "SignyardBulbs";
+    src:  url('/assets/fonts/SignyardBulbs/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardBulbs/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "SignyardShadow";
+    src:  url('/assets/fonts/SignyardShadow/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardShadow/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "SignyardSymbols";
+    src:  url('/assets/fonts/SignyardSymbols/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardSymbols/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "SignyardOne";
+    src:  url('/assets/fonts/SignyardOne/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardOne/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "SignyardTwo";
+    src:  url('/assets/fonts/SignyardTwo/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardTwo/font.woff') format('woff');
+  }
+  @font-face {
+    font-family: "SignyardD";
+    src:  url('/assets/fonts/SignyardD/font.woff2') format('woff2'), 
+          url('/assets/fonts/SignyardD/font.woff') format('woff');
+  }
+
+:root {
+  --ff-title: 'Cinzel', serif;
+  --ff-body: 'Roboto', sans-serif;
+
+  --fw-title-normal: 400;
+  --fw-title-bold: 600;
+  --fw-title-heavy: 800;
+  --fw-body-normal: 400;
+  --fw-body-bold: 600;
+  --fw-body-heavy: 800;
+
+  /* --fs-base: 16px; */
+  --fs-heading-large: ;
+  --fs-heading-medium: ;
+  --fs-heading-small: ;
+
+  --col-primary: rgb(43,43,43);
+  --col-secondary: rgb(17,171,171);
+  --col-tertiary:  rgb(240, 28, 0);
+  --col-accent-1: rgb(141,187,139);
+  --col-accent-2:rgb(240,96,0);
+  --col-neutral-1: rgb(255,255,255);
+  --col-neutral-2: rgb(0,0,0);
+}
+
+body {
+  background: var(--col-primary) url(https://res.cloudinary.com/jamie-scott-co-uk/image/upload/c_scale,h_1080,q_auto:good,w_1920/v1459429988/backgrounds/misty-pines.jpg) no-repeat center top scroll;
+  background-size: cover;
+  color: var(--col-neutral-1);
+  font-family: var(--ff-body);
+  font-size: 1.125rem;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: var(--ff-title);
+  font-size: 1.375rem;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: var(--col-accent-1);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--col-tertiary);
+}
+
+header{
+  background-color: var(--col-primary);
+  position: sticky;
+  width: 100vw;
+}
+
+header nav {
+  display: flex;
+  flex: row wrap;
+  justify-content: center;
+}
+
+header nav ul {
+  color: var(--col-neutral-1);
+  display: flex;
+  flex: row nowrap;
+  font-family: var(--ff-body);
+  font-size: 0.85rem;
+  font-weight: var(--fw-body-bold);
+  gap: 2.5rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0.8rem 0;
+  text-transform: uppercase;
+}
+
+header nav ul a,
+header nav ul a:link,
+header nav ul a:visited,
+header nav ul a:hover,
+header nav ul a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+header nav ul a:hover {
+  color: var(--col-tertiary);
+}
+
+header nav ul a:active {
+  color: var(--col-accent-2);
+}
+
+main {
+  display: grid;
+  grid-template-columns: [col1] 2rem [col2] 1fr [col3] 2rem;
+  grid-template-areas: left-screen-padding | content | right-screen-padding;
+}
+
+main > * {
+  grid-column: 2; /*make all content start in the second column*/
+  min-width: 0; /* make sure the screen padding columns don't colapse*/
+}
+
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.banner {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.6rem;
+    justify-content: center;
+    margin-top: 5rem;
+    position: relative;
+}
+
+.banner * {
+    order: 1;
+}
+
+.banner h1 {
+    align-items: center;
+    color: var(--col-primary);
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: "SignyardOne";
+    font-size: 8rem;
+    gap: 1rem;
+    margin: 0;
+    position: relative;
+}
+
+.banner h1 span:nth-child(2) {
+    font-family: 'SignyardSymbols';
+    font-size: 4rem;
+    margin-top: -1.25rem;
+}
+
+.banner h1 span {
+    position: relative;
+}
+
+.banner h1 span::before {
+    color: var(--col-secondary);
+    content: '';
+    font-family: 'SignyardShadow';
+    font-size: inherit;
+    right: -1px;
+}
+
+.banner h1 span::before,
+.banner h1 span::after {
+    position: relative;
+}
+
+.banner h1 span:nth-child(n)::before {
+    color: var(--col-secondary);
+    font-family: 'SignyardShadow';
+    font-size: inherit;
+    right: -1px;
+    position: absolute;
+}
+
+.banner h1 span:nth-child(1)::before,
+.banner h1 span:nth-child(3)::before {
+    content: attr(data-content);
+    left: 0;
+}
+
+.banner h1 span:nth-child(2)::before {
+    content: '\2d';
+    font-family: 'SignyardSymbols';
+    right: -3px;
+    top: 3px;
+    z-index: -1;
+}
+
+.banner h2 {
+    color: var(--col-neutral-1);
+    font-family: var(--ff-body);
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1rem;
+    margin: 0;
+    order: 0;
+    position: relative;
+}
+
+.banner h2::before {
+    color: var(--col-primary);
+    content: '\51';
+    font-family: 'SignyardSymbols';
+    font-size: 7rem;
+    left: 50%;
+    line-height: 1rem;
+    position: absolute;
+    top: -65%;
+    transform: translate(-50%);
+    z-index: -1;
+}
