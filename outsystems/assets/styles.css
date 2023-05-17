@@ -1,0 +1,672 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+About
+This file evolved from Natural Selection: https://github.com/frontaid/natural-selection
+This file also integrates the Fluidtype simple typography system https://www.fluiditype.com/
+
+This file is intended to act as a base file for the Unipro work with OutSystems and OutSystems UI
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* Apply styling to all elements (including their `::before` and `::after`
+pseudo-elements). One common use of this selector is to apply a custom
+`box-sizing`. */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Root
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+:root {
+  color-scheme: dark light;
+
+  --white: #ffffffff;
+  --snow: #f9f1f1ff;
+  --jet: #2f2f2fff;
+  --night: #141414ff;
+  --rose-pompadour: #dc7f9bff;
+  --carnation-pink: #f7a1c4ff;
+  --tea-rose-red: #e0b7b7ff;
+  --cambridge-blue: #94bfa7ff;
+
+  --color-primary: var(--rose-pompadour);
+  --color-secondary: var(--cambridge-blue);
+  --color-primary-hover: var(--tea-rose-red);
+  --color-primary-selected: var(--tea-rose-red);
+  --color-primary-lightest: var(----tea-rose-red);
+  --color-dark: var(--jet);
+  --color-darkest: var(--night);
+  --color-light: var(--snow);
+  --color-lightest: var(--white);
+
+  --container-padding: 1rem 1.5625rem;
+
+  --gradient-top: linear-gradient(
+    0deg,
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  --gradient-right: linear-gradient(
+    90deg,
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  --gradient-bottom: linear-gradient(
+    180deg,
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  --gradient-left: linear-gradient(
+    270deg,
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  --gradient-top-right: linear-gradient(
+    45deg,
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  --gradient-bottom-right: linear-gradient(
+    135deg,
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  --gradient-top-left: linear-gradient(
+    225deg,
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  --gradient-bottom-left: linear-gradient(
+    315deg,
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  --gradient-radial: radial-gradient(
+    var(--jet),
+    var(--rose-pompadour),
+    var(--carnation-pink),
+    var(--tea-rose-red),
+    var(--cambridge-blue)
+  );
+
+  @media (prefers-color-scheme: light) {
+    --color-background-body: var(--color-light);
+    --header-color: var(--color-primary);
+    --footer-color: var(--color-primary);
+    --section-color: var(--color-lightest);
+    /* --color-background-login:#ffffff;
+    --header-size:56px;
+    --header-size-content:48px;
+    --side-menu-size:300px;
+    --bottom-bar-size:56px;
+    --footer-height:0px; */
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --color-background-body: var(--color-dark);
+    --header-color: var(--color-primary);
+    --footer-color: var(--color-primary);
+    --section-color: var(--color-darkest);
+  }
+}
+
+html,
+body {
+  background: var(--color-background-body);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Content sectioning
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+p {
+  margin: 0;
+}
+
+header {
+}
+
+nav {
+}
+nav ul,
+nav ol {
+}
+nav li {
+}
+nav a {
+}
+nav a:visited {
+}
+nav a:hover {
+}
+nav a:active {
+}
+
+main {
+}
+
+article {
+}
+
+section {
+}
+
+aside {
+}
+
+search {
+}
+
+footer {
+}
+
+address {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Text block content
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* Overall styling, e.g. vertical spacing */
+p,
+ol,
+ul,
+pre,
+blockquote,
+figure,
+hr,
+dl {
+}
+
+p {
+}
+
+ol,
+ul {
+}
+ol {
+}
+ul {
+}
+li {
+}
+ol ol,
+ol ul,
+ul ul,
+ul ol {
+}
+li li {
+}
+
+pre {
+}
+pre code {
+}
+pre samp {
+}
+
+blockquote {
+}
+
+figure {
+}
+figcaption {
+}
+
+hr {
+}
+
+dl {
+}
+dt {
+}
+dd {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Inline text semantics
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+a {
+}
+a:visited {
+}
+a:hover {
+}
+a:active {
+}
+
+strong {
+}
+b {
+}
+
+em {
+}
+i {
+}
+
+q {
+}
+cite {
+}
+
+s {
+}
+
+mark {
+}
+
+/* If you specify a font size, consider using the `em` unit so that it works
+universally, e.g. for both `h1 small` and `p small` */
+small {
+}
+sub {
+}
+sup {
+}
+
+code {
+}
+
+dfn {
+}
+abbr {
+}
+abbr[title] {
+}
+
+var {
+}
+kbd {
+}
+kbd kbd {
+}
+samp {
+}
+
+u {
+}
+
+data {
+}
+time {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Demarcating edits
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+del {
+}
+ins {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Embedded content
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+img {
+}
+svg {
+}
+video {
+}
+canvas {
+}
+audio {
+}
+object {
+}
+
+noscript {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Table content
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+table {
+}
+caption {
+}
+col:first-child {
+}
+thead {
+}
+tbody {
+}
+tfoot {
+}
+tr {
+}
+th {
+}
+td {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Forms
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+fieldset {
+}
+fieldset:disabled {
+}
+legend {
+}
+
+form {
+}
+
+label {
+}
+
+::placeholder {
+}
+:focus::placeholder {
+}
+
+/* Overall styling, e.g. vertical spacing */
+input,
+textarea,
+select,
+button {
+}
+
+/* `textarea` and `input` elements that share a similar look and similar styling
+capabilities */
+/* - common styling */
+textarea,
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='number'],
+input[type='search'],
+input[type='url'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='time'] {
+}
+/* - individual styling */
+textarea {
+}
+input[type='text'] {
+}
+input[type='password'] {
+}
+input[type='email'] {
+}
+input[type='tel'] {
+}
+input[type='number'] {
+}
+input[type='search'] {
+}
+input[type='url'] {
+}
+input[type='date'] {
+}
+input[type='datetime-local'] {
+}
+input[type='month'] {
+}
+input[type='week'] {
+}
+input[type='time'] {
+}
+/* Tick boxes */
+input[type='checkbox'],
+input[type='radio'] {
+}
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+}
+input[type='checkbox'] {
+}
+input[type='checkbox']:checked {
+}
+input[type='radio'] {
+}
+input[type='radio']:checked {
+}
+/* Other input fields, some with limited styling capabilities */
+input[type='file'] {
+}
+input[type='color'] {
+}
+input[type='range'] {
+}
+
+select {
+}
+optgroup {
+}
+option {
+}
+option:checked {
+}
+datalist {
+}
+
+button,
+input[type='submit'] {
+}
+button:disabled,
+input[type='submit']:disabled {
+}
+button.secondary {
+}
+button.secondary:disabled {
+}
+
+/* This matches forms or form elements that are invalid *and* have been interacted with. 
+
+Note that:
+1) You may need to add the `interacted` class to forms yourself
+2) You may need to add the `touched` class to form fields yourself
+3) `:user-invalid` is a working draft and not yet supported by most browsers
+4) `:-moz-ui-invalid` is non-standard and only works in Firefox
+
+Form validation error messages will appear (in capable browsers) regardless of
+this styling. You can omit 1) and 2) and still have working forms. Perfect
+example of progressive enhancement. */
+
+/* Applies to invalid forms */
+form.interacted:invalid {
+}
+/* Applies to invalid form fields. You would need to repeat your declarations
+for the following three groups of selectors individually. Browsers completely
+ignore any rule that contains a selector they do not know. */
+form.interacted :invalid,
+form .touched:invalid {
+}
+:user-invalid {
+}
+:-moz-ui-invalid {
+}
+
+output {
+}
+
+progress {
+}
+meter {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Interactive elements
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+details {
+}
+details[open] {
+}
+summary {
+}
+details[open] summary {
+}
+
+dialog {
+}
+dialog::backdrop {
+}
+
+/* Some form fields, `details`, elements with `tabindex`, and possibly other
+elements can be focussed. You should use `:focus-visible` instead of `:focus`
+whenever possible. As the former is not yet widely supported, you need to do it
+as follows:
+1) Set styling on focus
+2) If browser supports `:focus-visible`, revert/unset the styling from 1)
+3) If the element matches `:focus-visible`, apply the styling again */
+:focus {
+}
+:focus:not(:focus-visible) {
+}
+:focus-visible {
+}
+
+[inert],
+[inert] * {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Media queries
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+@media (orientation: portrait) {
+}
+
+@media (orientation: landscape) {
+}
+
+@media print {
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Layout
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.site-container {
+  display: grid;
+  gap: 2.083rem;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'Header'
+    'Main'
+    'Footer';
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr 80px;
+}
+
+header.site-container__header {
+  background: var(--header-color);
+  grid-area: Header;
+  padding: var(--container-padding);
+}
+
+main.site-container__main-content {
+  display: grid;
+  gap: 2.083rem;
+  grid-area: Main;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'mainHeader mainHeader mainHeader'
+    'navigation content additionalContent';
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  grid-template-rows: 0.5 1fr;
+  padding: var(--container-padding);
+}
+
+.main-content__header {
+  grid-area: mainHeader;
+}
+
+.main-content__navigation {
+  background: var(--section-color);
+  grid-area: navigation;
+  padding: var(--container-padding);
+}
+
+.main-content__content-section {
+  background: var(--section-color);
+  grid-area: content;
+  padding: var(--container-padding);
+}
+
+.main-content__additional-content {
+  background: var(--section-color);
+  grid-area: additionalContent;
+  padding: var(--container-padding);
+}
+
+footer.site-container__footer {
+  background: var(--footer-color);
+  grid-area: Footer;
+  padding: var(--container-padding);
+}
